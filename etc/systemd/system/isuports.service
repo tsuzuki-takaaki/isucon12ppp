@@ -11,6 +11,6 @@ User=isucon
 Group=isucon
 EnvironmentFile=/home/isucon/env.sh
 WorkingDirectory=/home/isucon/webapp/ruby
-ExecStart=/home/isucon/.rbenv/shims/bundle exec puma -e production -p 3000 -w 2
+ExecStart=/home/isucon/.rbenv/shims/bundle exec puma -e production -p 3000 -w 8
 ExecStop=/bin/kill -s QUIT $MAINPID
 Restart=always
