@@ -32,3 +32,5 @@ webapp/python
 log/
 .wget-hsts
 .dotnet/
+.bundle/
+.rbenv/
