@@ -25,16 +25,19 @@ scp -r etc/ isu3:~/
 # See man scp
 scp -r webapp/ isu2:~/
 scp -r webapp/ isu3:~/
+scp /home/isucon/env.sh isu2:/home/isucon/
+scp /home/isucon/env.sh isu3:/home/isucon/
 
 # serviceの再起動(systemd unit fileを触った場合は、sudo systemctl daemon reload)
-sudo systemctl start nginx
-sudo systemctl start isuports.service
+# 後ろから上げていく
 sudo systemctl start mysql
+sudo systemctl start isuports.service
+sudo systemctl start nginx
 
-ssh isu2 sudo systemctl start nginx
-ssh isu2 sudo systemctl start isuports.service
 ssh isu2 sudo systemctl start mysql
+ssh isu2 sudo systemctl start isuports.service
+ssh isu2 sudo systemctl start nginx
 
-ssh isu3 sudo systemctl start nginx
-ssh isu3 sudo systemctl start isuports.service
 ssh isu3 sudo systemctl start mysql
+ssh isu3 sudo systemctl start isuports.service
+ssh isu3 sudo systemctl start nginx
